@@ -53,4 +53,6 @@ function genere_HTML()
 // Ajout a la page avec le bon string --> carrousel ici
 add_shortcode('carrousel', 'genere_HTML');
 
+// Retire la marge en haut de la barre admin
+add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 
