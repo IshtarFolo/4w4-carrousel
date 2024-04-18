@@ -1,17 +1,28 @@
 .carrousel {
-    display: none;
+    // display: none;
     position: absolute;
-    width: 50%;
-    height: 50%;
+    width: 50vw;
+    height: 200vw;
     border: 2px solid black;
     background-color: rgba(0, 0, 0, .1);
-    top: 25%;
+    top: 28%;
     left: 25%;
-    z-index: 1;
+    z-index: 1000;
+    transform: scale(0);
+
+    transition: transform 0.25s;
+
+    @media screen and (min-width: 700px){
+        width: 50vw;
+        height: 100vw;
+        top: 25%;
+        left: 25%;
+    }
 }
 
 .carrousel--ouvrir {
     display: block;
+    transform: scale(1);
 }
 
 .carrousel__x {
@@ -20,6 +31,14 @@
     top: 0;
     padding: 5px 3px;
     display: block;
+}
+
+.carrousel__figure {
+    
+}
+
+.carrousel__img {
+
 }
 
 .bouton__ouvrir {
