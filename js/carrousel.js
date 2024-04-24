@@ -67,6 +67,8 @@
     function creerRadioCarrousel(index) {
         // creation du bouton
         let carrousel__radio = document.createElement('input');
+        // classe du formulaire
+        let carrousel__form = document.querySelector('.carrousel__form');
         // classe du bouton 
         carrousel__radio.classList.add('carrousel__radio');
         // type de bouton 
@@ -76,12 +78,11 @@
         // nom du bouton
         carrousel__radio.name = 'radio';
         // ajout du bouton
-        carrousel__figure.appendChild(carrousel__radio);
-
+        carrousel__form.appendChild(carrousel__radio);
     }
 
     // Recuperation des bouton radio
-    let lesBoutonsRadio = document.querySelectorAll('input');
+    let lesBoutonsRadio = document.querySelectorAll('.carrousel__radio');
 
     console.log(lesBoutonsRadio);
 
@@ -93,7 +94,7 @@
             // On recupere l'image avec le bon index et on l'affiche en changeant son opacite 
             // l'opacite de l'image precedante est remise a 0
             let lesImages = document.querySelectorAll('.carrousel__img');
-            
+
             for (let img of lesImages){
                 if (img.dataset.index == index){
                     img.style.opacity = 1;
