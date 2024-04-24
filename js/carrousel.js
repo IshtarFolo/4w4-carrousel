@@ -104,4 +104,65 @@
             } 
         })
     }
+
+    // Attrapper la balise figure du carrousel
+    let carrouselFigure = document.querySelector('.carrousel__figure');
+
+    // Recuperer les images et les boutons radio
+    let images = document.querySelectorAll('.carrousel__img');
+    let boutons = document.querySelectorAll('.carrousel__radio');
+
+    // Creer les boutons de navigation
+    let prevButton = document.createElement('input');
+    prevButton.type = 'button';
+    prevButton.value = '<';
+    prevButton.id = 'prevButton';
+
+    let nextButton = document.createElement('input');
+    nextButton.type = 'button';
+    nextButton.value = '>';
+    nextButton.id = 'nextButton';
+
+    // Ajouter les boutons de navigation a la figure
+    carrouselFigure.appendChild(prevButton);
+    carrouselFigure.appendChild(nextButton);
+
+    // Ajouter un ecouteur d'evenement sur les boutons de navigation
+    // Ici le bouton precedent
+    //---------------------------------
+    prevButton.addEventListener('click', function() {
+    // L'index descend d'une unité, on revient au début si nécessaire
+    index = (index - 1 + images.length) % images.length;
+
+    // On change l'opacite des images en fonction de l'index
+    for (let img of images) {
+        if (img.dataset.index == index) {
+            img.style.opacity = 1;
+        } else {
+            img.style.opacity = 0;
+        }
+    }
+
+        // On met à jour le bouton radio correspondant
+        boutons[index].checked = true;
+    });
+
+    // Ici le bouton suivant
+    //---------------------------------
+    nextButton.addEventListener('click', function() {
+        // On incrementer l'index, on revient au début si nécessaire
+        index = (index + 1) % images.length;
+
+        // On change l'opacite des images en fonction de l'index
+        for (let img of images) {
+            if (img.dataset.index == index) {
+                img.style.opacity = 1;
+            } else {
+                img.style.opacity = 0;
+            }
+        }
+
+        // On met à jour le bouton radio correspondant
+        boutons[index].checked = true;
+    });
 })()
