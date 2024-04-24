@@ -61,4 +61,7 @@ function genere_HTML()
 add_shortcode('carrousel', 'genere_HTML');
 
 // Retire la marge en haut de la barre admin
+// [carrousel] juste apres la galerie dans l'article
+// Quand la fonction the_content() rencontre [carrousel] c'est a ce moment
+// que le carrousel est initialise. 
 add_theme_support('admin-bar', array('callback' => '__return_false'));
