@@ -94,7 +94,7 @@
 
     // Ajout d'un ecouteur d'evenement sur tous les boutons radio
     for (let bouton of lesBoutonsRadio){
-        bouton.addEventListener('click', function(){
+        bouton.addEventListener('change', function(){
             let index = this.dataset.index;
 
             // On recupere l'image avec le bon index et on l'affiche en changeant son opacite 
