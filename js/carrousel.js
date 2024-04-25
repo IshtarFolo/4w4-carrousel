@@ -6,6 +6,12 @@
     let carrousel = document.querySelector('.carrousel')
     let bouton = document.querySelector('.bouton__ouvrir')
 
+    // Faire apparaitre le carrousel dans le body du document HTML pour éviter qu'il ne se retrouve
+    // sous les autres cartes des sections du site.
+    document.addEventListener('DOMContentLoaded', function(){
+        document.body.appendChild(carrousel);
+    })
+
     // On ajoute un écouteur d'événement sur le bouton pour ouvrir le carrousel
     bouton.addEventListener('mousedown', function(){
         carrousel.classList.add('carrousel--ouvrir')
