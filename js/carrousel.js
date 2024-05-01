@@ -176,4 +176,54 @@
         // On met à jour le bouton radio correspondant
         boutons[index].checked = true;
     });
+
+    // Ajouter un écouteur d'événement sur les images dans la carte
+    let imagesCarte = document.querySelectorAll('.wp-block-image img');
+
+    // On récupère l'index de l'image dans le tableau
+    imagesCarte.forEach((img, index) => {
+        img.dataset.index = index;
+    });
+
+    // On parcoure le tableau des images de la carte pour leur donner un écouteur d'événement qui permet d'ouvrir le carrousel
+    for (let img of imagesCarte) {
+        img.addEventListener('click', function() {
+            // On recupere l'index de l'image
+            let index = this.dataset.index;
+            console.log("l'index: " + index);
+
+            // On affiche le carrousel
+            carrousel.classList.add('carrousel--ouvrir');
+
+            // On change l'opacite des images en fonction de l'index
+            for (let img of images) {
+                if (img.dataset.index == index) {
+                    img.style.opacity = 1;
+                } else {
+                    img.style.opacity = 0;
+                }
+            }
+
+            // On met à jour le bouton radio correspondant
+            boutons[index].checked = true;
+        });
+    }
+
+    imagesCarte.forEach((img) => {
+        if (img.complete) {
+            // The image is already loaded, so we can directly set the dimensions of the figure
+            let naturalWidth = img.naturalWidth;
+            let naturalHeight = img.naturalHeight;
+            figureElement.style.width = naturalWidth + 'px';
+            figureElement.style.height = naturalHeight + 'px';
+        } else {
+            // The image is not yet loaded, so we add a load event listener
+            img.addEventListener('load', function() {
+                let naturalWidth = this.naturalWidth;
+                let naturalHeight = this.naturalHeight;
+                figureElement.style.width = naturalWidth + 'px';
+                figureElement.style.height = naturalHeight + 'px';
+            });
+        }
+    });
 })()

@@ -35,8 +35,8 @@
 }
 
 .carrousel__figure { // Conteneur de l'image
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
 }
 
 .carrousel__img {
@@ -45,9 +45,11 @@
     height: 100%;
     top: 0;
     left: 0;
-    object-fit: cover;
+    object-fit: cover; // À changer!
     object-position: center;
     opacity: 0; // cache les images
+
+    transition: opacity 0.25s ease-in-out; // Animation de l'ouverture des images
 }
 
 .bouton__ouvrir {
