@@ -46,7 +46,8 @@
     top: 0;
     left: 0;
     object-fit: cover;
-    opacity: 1; // cache les images
+    object-position: center;
+    opacity: 0; // cache les images
 }
 
 .bouton__ouvrir {

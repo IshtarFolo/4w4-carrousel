@@ -118,6 +118,11 @@
     let images = document.querySelectorAll('.carrousel__img');
     let boutons = document.querySelectorAll('.carrousel__radio');
 
+    // La première image est rendue visible
+    if (images.length > 0) {
+        images[0].style.opacity = 1;
+    }
+
     // Creer les boutons de navigation
     let prevButton = document.createElement('input');
     prevButton.type = 'button';
