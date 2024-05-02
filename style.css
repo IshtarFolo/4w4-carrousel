@@ -1,17 +1,17 @@
 .carrousel {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  width: 75vw;
+  height: 90vh;
   border: 2px solid black;
   background-color: rgba(0, 255, 0, 0.5);
-  top: 0%;
-  left: 0%;
+  top: 5%;
+  left: 11%;
   z-index: 1;
   transform: scale(0);
   opacity: 1;
   transition: transform 0.25s;
 }
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 700px) {
   .carrousel {
     width: 75%;
     height: 75%;
