@@ -1,6 +1,13 @@
 // (function(){})() --> Fonction auto-executée
 
 (function(){
+    // Pour enlever le style de la galerie d'images
+    window.onload = function() {
+        var galleries = document.querySelectorAll('.wp-block-gallery');
+        galleries.forEach(function(gallery) {
+            gallery.removeAttribute('style');
+        });
+    }
     /* On récupère le bouton pour ouvrir et le carrousel 
     ----------------------------------------------------------------*/
     let carrousel = document.querySelector('.carrousel')
@@ -32,7 +39,7 @@
     // On cree une balise img 
     let carrousel__img = document.createElement('img');
     // On capture l'element figure du carrousel
-    let carrousel__figure = document.querySelector('figure');
+    let carrousel__figure = carrousel.querySelector('figure');
 
     // Pour creer une collection d'images dans la galerie
     // On capture tous les elements img de la galerie
@@ -185,11 +192,14 @@
         img.dataset.index = index;
     });
 
+    // On déclare un premier index par défaut
+    let indexActuel = 0;
+    
     // On parcoure le tableau des images de la carte pour leur donner un écouteur d'événement qui permet d'ouvrir le carrousel
     for (let img of imagesCarte) {
         img.addEventListener('click', function() {
             // On recupere l'index de l'image
-            let index = this.dataset.index;
+            indexActuel = this.dataset.index;
             console.log("l'index: " + index);
 
             // On affiche le carrousel
@@ -197,7 +207,7 @@
 
             // On change l'opacite des images en fonction de l'index
             for (let img of images) {
-                if (img.dataset.index == index) {
+                if (img.dataset.index == indexActuel) {
                     img.style.opacity = 1;
                 } else {
                     img.style.opacity = 0;
@@ -205,11 +215,12 @@
             }
 
             // On met à jour le bouton radio correspondant
-            boutons[index].checked = true;
+            boutons[indexActuel].checked = true;
         });
     }
 
     imagesCarte.forEach((img) => {
+        let figureElement = document.querySelector('.wp-block-gallery'); 
         if (img.complete) {
             // The image is already loaded, so we can directly set the dimensions of the figure
             let naturalWidth = img.naturalWidth;
@@ -225,5 +236,10 @@
                 figureElement.style.height = naturalHeight + 'px';
             });
         }
+    
+        // Si l'utilisateur clique sur le bouton pour ouvrir le carrousel on passe la valeur checked au premier bouton radio
+        bouton.addEventListener('mousedown', function() {
+            boutons[indexActuel].checked = true;
+        });
     });
 })()

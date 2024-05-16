@@ -6,7 +6,7 @@
   background-color: rgba(0, 255, 0, 0.5);
   top: 5%;
   left: 11%;
-  z-index: 1;
+  z-index: 3;
   transform: scale(0);
   opacity: 1;
   transition: transform 0.25s;
@@ -53,6 +53,23 @@
 
 .bouton__ouvrir {
   width: 200px;
+}
+
+.carrousel__radio {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #664;
+  border-radius: 50%;
+  outline: none;
+  box-shadow: 0 0 5px #2196F3;
+  transition: 0.2s;
+  background-color: hsla(207, 90%, 54%, 0.7);
+}
+
+.carrousel__radio:checked {
+  border: 3px solid #2196F3;
+  background-color: hsl(120, 100%, 25%);
 }
 
 .carrousel__form {
