@@ -27,11 +27,22 @@
 
 .carrousel__x {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 2%;
+  top: 2%;
+  width: 50px;
+  height: 50px;
   padding: 5px 3px;
-  display: block;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  font-size: 2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
   z-index: 2;
+}
+.carrousel__x:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .carrousel__figure {
@@ -53,6 +64,17 @@
 
 .bouton__ouvrir {
   width: 200px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.bouton__ouvrir:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .carrousel__radio {
@@ -64,12 +86,16 @@
   outline: none;
   box-shadow: 0 0 5px #2196F3;
   transition: 0.2s;
-  background-color: hsla(207, 90%, 54%, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+.carrousel__radio:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .carrousel__radio:checked {
-  border: 3px solid #2196F3;
-  background-color: hsl(120, 100%, 25%);
+  border: 3px solid white;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .carrousel__form {
@@ -87,19 +113,36 @@
 }
 
 #prevButton {
-  width: 10%;
-  height: 5%;
   position: absolute;
-  left: 0;
   top: 50%;
-  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-size: 2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#prevButton:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 #nextButton {
-  width: 10%;
-  height: 5%;
   position: absolute;
-  left: 90.5%;
   top: 50%;
-  transform: translateY(-50%);
+  right: 0%;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-size: 2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#nextButton:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }/*# sourceMappingURL=style.css.map */

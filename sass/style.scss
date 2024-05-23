@@ -27,11 +27,23 @@
 
 .carrousel__x { // Le bouton pour fermer la boite modale
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 2%; 
+    top: 2%; 
+    width: 50px;
+    height: 50px;
     padding: 5px 3px;
-    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    line-height: 40px; 
+    font-size: 2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     z-index: 2;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 }
 
 .carrousel__figure { // Conteneur de l'image
@@ -53,10 +65,21 @@
 }
 
 .bouton__ouvrir {
-    width: 200px;
-}
+    width: 200px; // Adjust this value as needed
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1em; // Adjust this value as needed
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-.carrousel__radio { //Les boutons radio
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+.carrousel__radio {
     appearance: none; 
     width: 20px; 
     height: 20px; 
@@ -65,12 +88,17 @@
     outline: none; 
     box-shadow: 0 0 5px #2196F3; 
     transition: 0.2s; 
-    background-color: hsla(207, 90%, 54%, 70%);
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 }
 
 .carrousel__radio:checked {
-    border: 3px solid #2196F3; 
-    background-color: hsl(120, 100%, 25%);
+    border: 3px solid white; 
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .carrousel__form {
@@ -87,21 +115,44 @@
         gap: 1%;
     }
 
+// Fleche gauche
 #prevButton {
-    width: 10%;
-    height: 5%;
     position: absolute;
-    left: 0;
     top: 50%;
-    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    // Ajout d'un effet de survol
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 }
 
+// Fleche droite
 #nextButton {
-    width: 10%;
-    height: 5%;
     position: absolute;
-    left: 90.5%;
     top: 50%;
-    transform: translateY(-50%);
+    right: 0%;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    // Ajout d'un effet de survol
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 }
 
