@@ -12,3 +12,5 @@
 -	Améliorer l’interactivité et l’utilisabilité
 -	Les animations sont simples et efficaces
 
+##### Liens vers l'hébergeur WHC
+- https://gftnth00.mywhc.ca/tim07/
